@@ -2,6 +2,7 @@ import React from "react"
 
 const Quiz = () => (
   <div>
+    quiz
   </div>
 )
 

@@ -1,7 +1,14 @@
+import axios from 'axios'
+
 const BACKEND_URL = 'http://localhost:3000/'
-const api = {
-  user: `${BACKEND_URL}/users`,
-  quiz: `${BACKEND_URL}/quiz`
+
+const callAPI = async (path) => {
+  let data
+  await axios.get(`${BACKEND_URL}${path}`).then(res => {
+    data = res
+  })
+    .catch(err => console.log(`API ERROR: ${err}`))
+  return data
 }
 
-export default api
+export default callAPI
